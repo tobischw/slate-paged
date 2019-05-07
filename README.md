@@ -1,5 +1,7 @@
 # slate-paged
 
+![slate-paged preview](https://github.com/tobischw/slate-paged/blob/master/demo.gif)
+
 A _buggy_ attempt at paginating the fantastic [Slate editor](https://github.com/ianstormtaylor/slate).
 
 ## History
@@ -25,17 +27,18 @@ The `slate-paged` module currently just lives inside the `src` folder mixed with
 * Footer is offset.
 * Schema has been disabled. This used to enforce the layout (i.e. backspacing in content would make sure not to delete the header), but this caused a myriad of other issues.
 * No splitting of blocks on page overflow. Instead, the entire last block is moved to the new page.
+* Better calculations of content margins.
 * No tests.
 
-Fixing these (major) issues would provide us with a pretty barebones but working, paginated editor. 
-
-## How to use
-Clone this repo and run `npm install` to install dependencies. Then, run `npm start` to open the sample application. You should be able to type away in the browser! (Good luck, you will need it.)
+Fixing these (major) issues would provide us with a pretty barebones but working, paginated editor.
 
 ## How does it work
 slate-paged uses one SlateJS editor. Pages are components inside the document, so the layout from slate-paged has to be used. A header and footer is a node, and so is the content. 
 
 The content component is core: It detects overflows and sends a message to the editor to move the most recent block to the next page (including the cursor), or inserts a new page if necessary. It's probably a good idea to take a look at the source code.
+
+## How to install
+Clone this repo and run `npm install` to install dependencies. Then, run `npm start` to open the sample application. You should be able to type away in the browser! (Good luck, you will need it.)
 
 ## How to use
 Since this is not a proper npm module yet, copy over the slate-paged folder into your
@@ -93,11 +96,15 @@ It is possible to (somewhat) customize the paginated editor without having to mo
 | pageLayout       | The Slate array describing the layout of a newly inserted page.                                               | See `default-page-layout.json`                                   | Working |   |
 | unit             | The units for changing the dimensions and margins of the page.                                                | `in` (inches)                                                    | Working |   |
 | dimensions       | The size of an entire page, including content, footer, header, etc... (in unit described above).              | `{width: '8.5', height: '11'}` (U.S. Letter)                     | Buggy   |   |
-| contentMargin    | The margins for the `content` node (i.e. the prominent content of the page) from the page it is contained in. | `{ top: '1', right: '1', bottom: '1', left: '1' }` (U.S. Letter) | Buggy   |   |
+| contentMargin    | The margins for the `content` node (i.e. the prominent content of the page) from the page it is contained in. | `{ top: '1', right: '1', bottom: '1', left: '1' }` (U.S. Letter) | **Not working!**   |   |
 | pageClassName    | Class name for page. See `page.css`                                                                           | `page`                                                           | Working |   |
 | contentClassName | Class name for content. See `page.css`                                                                        | `content`                                                        | Working |   |
 | headerClassName  | Class name for header. See `page.css`                                                                         | `header`                                                         | Working |   |
 | footerClassName  | Class name for footer. See `page.css`                                                                         | `footer`                                                         | Working |   |
+
+
+### Using Options
+
 
 ## Contributing
 I need a lot of help to get this to a working state, thus any contribution and constructive critism is very welcome. 
