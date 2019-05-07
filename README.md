@@ -104,7 +104,13 @@ It is possible to (somewhat) customize the paginated editor without having to mo
 
 
 ### Using Options
-
+```js
+plugins = [
+        SlatePaged({
+            'dimensions': {width: '8', height: '12'}
+        })
+    ]
+```
 
 ## Contributing
 I need a lot of help to get this to a working state, thus any contribution and constructive critism is very welcome. 

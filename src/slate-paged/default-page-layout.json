@@ -1,0 +1,45 @@
+{
+  "type": "page",
+  "nodes": [
+    {
+      "object": "block",
+      "type": "header",
+      "nodes": [
+        {
+          "object": "text",
+          "type": "paragraph",
+          "leaves": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "type": "content",
+      "nodes": [
+        {
+          "object": "block",
+          "type": "paragraph"
+        }
+      ]
+    },
+    {
+      "object": "block",
+      "type": "footer",
+      "nodes": [
+        {
+          "object": "text",
+          "type": "paragraph",
+          "leaves": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

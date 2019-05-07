@@ -1,0 +1,33 @@
+.page {
+    transform: scale(0.9);
+    margin: 10px auto;
+    font-family: 'Arial', sans-serif;
+    font-size: 19pt;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.page > div {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.page .content {
+    overflow: visible;
+    border: thin solid #d9d9d9;
+}
+
+.page .header {
+    text-align: right;
+    padding: 0.1in;
+    height: 0.9in;
+}
+
+.page .footer {
+    text-align: center;
+    bottom: 0px;
+    vertical-align: bottom;
+    padding: 0.1in;
+    height: 0.9in;
+}
